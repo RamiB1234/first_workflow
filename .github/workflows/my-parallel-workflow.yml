@@ -67,7 +67,7 @@ jobs:
 
       - name: Debug message
        if: env.debug == 'true'
-        run: echo "Debugging is enabled."
+       run: echo "Debugging is enabled."
   
   post-build-actions:
     # This job will wait for other jobs to be done successfuly 
