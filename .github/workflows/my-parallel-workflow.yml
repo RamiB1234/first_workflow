@@ -11,6 +11,10 @@ on:
   #schedule:
   #  - cron: '0 5 * * 1-5'
 
+env:
+  # Setting an environment variable with the value of a configuration variable
+  debug: ${{ vars.DEBUG }}
+
 # Jobs defined in the workflow
 jobs:
   build-and-test-1:
@@ -36,7 +40,7 @@ jobs:
         run: npm test
 
       - name: Debug message
-        if: ${{ vars.DEBUG == 'true' }}
+        if: debug == 'true'
         run: echo "Debugging is enabled."
 
   build-and-test-2:
@@ -62,7 +66,7 @@ jobs:
         run: npm test
 
       - name: Debug message
-        if: ${{ vars.DEBUG == 'true' }}
+       if: debug == 'true'
         run: echo "Debugging is enabled."
   
   post-build-actions:
