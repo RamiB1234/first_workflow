@@ -32,6 +32,12 @@ jobs:
     - name: Print a message
       run: echo "Hello, world!"
 
-    - name: Run a custom action
-      uses: RamiB1234/business-greeting-action@master
+    - name: Checkout the Business Greeting Action
+      uses: actions/checkout@v4
+      with:
+        repository: RamiB1234/business-greeting-action  # Explicitly fetch the action repo
+        path: business-greeting-action  # Store it in a subfolder
+
+    - name: Run Business Greeting Action
+      run: python business-greeting-action/main.py  # Now the script is in the correct location
 
