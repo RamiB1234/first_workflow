@@ -33,5 +33,5 @@ jobs:
       run: echo "Hello, world!"
 
     - name: Run a custom action
-      uses: RamiB1234/business-greeting-action-nodejs@master
+      uses: RamiB1234/business-greeting-action@master
 
