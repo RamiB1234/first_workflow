@@ -39,5 +39,7 @@ jobs:
         path: business-greeting-action  # Store it in a subfolder
 
     - name: Run Business Greeting Action
-      run: python business-greeting-action/main.py  # Now the script is in the correct location
+      run: |
+        export INPUT_NAME="Rami"  # Set input as an environment variable
+        python business-greeting-action/main.py  # Now the script is in the correct location
 
