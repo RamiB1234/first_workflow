@@ -26,5 +26,11 @@ jobs:
       with:
         node-version: latest
 
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run tests
+      run: npm test
+
     - name: Prince a message
       run: echo "Hello world!"
