@@ -16,54 +16,54 @@ on:
 jobs:
   build-and-test-1:
     runs-on: ubuntu-latest
-      steps:
-        - name: Checkout code
-          uses: actions/checkout@v3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-        - name: Set up Node.js 
-          uses: actions/setup-node@v3
-          with:
-            node-version: latest
+      - name: Set up Node.js 
+        uses: actions/setup-node@v3
+        with:
+          node-version: latest
 
-        - name: Print a message for master branch
-          if: github.ref == 'refs/heads/master'
-          run: echo "This is the master branch."
+      - name: Print a message for master branch
+        if: github.ref == 'refs/heads/master'
+        run: echo "This is the master branch."
 
-        - name: Print a message for non-master branches
-          if: github.ref != 'refs/heads/master'
-          run: echo "This is not the master branch."
+      - name: Print a message for non-master branches
+        if: github.ref != 'refs/heads/master'
+        run: echo "This is not the master branch."
 
-        - name: Run tests
-          run: npm test
+      - name: Run tests
+        run: npm test
 
-        - name: Debug message
-          if: env.DEBUG == 'true'
-          run: echo "Debugging is enabled."
+      - name: Debug message
+        if: env.DEBUG == 'true'
+        run: echo "Debugging is enabled."
   build-and-test-2:
     runs-on: ubuntu-latest
-      steps:
-        - name: Checkout code
-          uses: actions/checkout@v3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-        - name: Set up Node.js 
-          uses: actions/setup-node@v3
-          with:
-            node-version: latest
+      - name: Set up Node.js 
+        uses: actions/setup-node@v3
+        with:
+          node-version: latest
 
-        - name: Print a message for master branch
-          if: github.ref == 'refs/heads/master'
-          run: echo "This is the master branch."
+      - name: Print a message for master branch
+        if: github.ref == 'refs/heads/master'
+        run: echo "This is the master branch."
 
-        - name: Print a message for non-master branches
-          if: github.ref != 'refs/heads/master'
-          run: echo "This is not the master branch."
+      - name: Print a message for non-master branches
+        if: github.ref != 'refs/heads/master'
+        run: echo "This is not the master branch."
 
-        - name: Run tests
-          run: npm test
+      - name: Run tests
+        run: npm test
 
-        - name: Debug message
-          if: env.DEBUG == 'true'
-          run: echo "Debugging is enabled."
+      - name: Debug message
+        if: env.DEBUG == 'true'
+        run: echo "Debugging is enabled."
   post-build-action:
     needs: [build-and-test-1,build-and-test-2]
     runs-on: ubuntu-latest
