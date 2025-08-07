@@ -32,5 +32,7 @@ jobs:
     - name: Run tests
       run: npm test
 
-    - name: Prince a message
-      run: echo "Hello world!"
+    - name: Prince a greeting message from custom action
+      uses: RamiB1234/business-greetings-action@master
+      with:
+        name: 'Rami Bukhari'
