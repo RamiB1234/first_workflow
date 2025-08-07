@@ -34,5 +34,10 @@ jobs:
 
     - name: Prince a greeting message from custom action
       uses: RamiB1234/business-greetings-action@master
+      id: timestampOutput
       with:
         name: 'Rami Bukhari'
+    
+    - name: Use the timestamp output
+      run: echo "Greeting was issued at ${{ steps.greet.outputs.timestampOutput }}"
+
