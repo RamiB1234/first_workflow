@@ -39,5 +39,5 @@ jobs:
         name: 'Rami Bukhari'
     
     - name: Use the timestamp output
-      run: echo "Greeting was issued at ${{ steps.greet.outputs.timestampOutput }}"
+      run: echo "Greeting was issued at ${{ steps.timestampOutput.outputs.timestamp }}"
 
